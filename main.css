@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Neonderthaw&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+body {
+  background: black;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+#navbarNavDropdown {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+#navbarNavDropdown .nav-link {
+  color: white;
+}
+
+.banner {
+  background: url("./images/banner.jpg") no-repeat 50%/cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.frm-imgs {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.bn-image-1, .bn-image-2 {
+  width: 4rem;
+}
+
+.banner-inside .row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bn-image-1 {
+  margin-top: -5rem;
+}
+
+.bn-image-2 {
+  margin-top: 5rem;
+  margin-left: -1.7rem;
+}
+
+.banner-inside-left {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.banner-inside-left .banner-large-text {
+  border: 2px solid black;
+  padding: 10px 50px;
+  margin-bottom: 10em;
+  color: white;
+}
+
+.banner-inside-left .welcome-quotes {
+  font-family: 'Neonderthaw', cursive;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.banner-image-1 {
+  background: url("./images/banner-inner-1.jpg") no-repeat;
+  background-position-y: 138px;
+  background-position-x: 763px;
+}
+
+.banner-image-2 {
+  background: url("./images/banner-inner-2.jpg") no-repeat;
+  background-position-y: 300px;
+  background-position-x: 1069px;
+}
+
+@media screen and (max-width: 500px) {
+  .banner {
+    background: url("./images/banner-2.jpg") no-repeat 50%/cover;
+  }
+  .banner-inside-left {
+    height: 30vh;
+  }
+  .frm-imgs {
+    height: 60vh;
+  }
+}
+/*# sourceMappingURL=main.css.map */

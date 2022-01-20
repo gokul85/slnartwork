@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="banner">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SLNARTWORK</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                    data-toggle="dropdown" aria-expanded="false">
+                                    Features
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Get Quote</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Order status</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="banner-inside">
+                <div class="row js-c">
+                    <div class="col-md-6 frm-imgs row">
+                        <div class="bn-image-1 col-6">
+                            <div class="squareFrame">
+                                <img class="image" id="frm-image-1" src="" />
+                            </div>
+                        </div>
+                        <div class="bn-image-2 col-6">
+                            <div class="squareFrame">
+                                <img class="image" id="frm-image-2" src="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 banner-inside-left">
+                        <div class="welcome-quotes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $.getJSON('./welcome-quote.json', function (data) {
+            var today = new Date();
+            var hour = today.getHours();
+            if (hour >= 6 & hour < 12) {
+                console.log(data.morning)
+            }
+            else if (hour >= 12 & hour <= 18) {
+                console.log(data.evening)
+            }
+            else {
+                console.log(data.night[Math.floor(Math.random() * 15)]);
+                $(".welcome-quotes").append(data.night[Math.floor(Math.random() * 15)]);
+            }
+        })
+
+        $("#frm-image-1").attr("src", "/images/banner-inner-" + Math.floor(Math.random() * 13) + ".jpg");
+        $("#frm-image-2").attr("src", "/images/banner-inner-" + Math.floor(Math.random() * 13) + ".jpg");
+    </script>
+
+    <style>
+        .roundFrame {
+            background: url("images/frame.jpg");
+            margin-left: auto;
+            margin-right: auto;
+            display: table-cell;
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: inset 0 50px rgba(255, 255, 255, 0.1),
+                inset 2px -15px 30px rgba(0, 0, 0, 0.4),
+                2px 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .roundFrame img {
+            width: 300px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+        }
+
+        .squareFrame {
+            background: url("images/frame.jpg") 100%/cover;
+            margin-left: auto;
+            margin-right: auto;
+            display: table-cell;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            box-shadow: inset 0 50px rgba(255, 255, 255, 0.1),
+                inset 2px -15px 30px rgba(0, 0, 0, 0.4),
+                2px 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 0.6rem;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .squareFrame img {
+            width: 100%;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+        }
+    </style>
+
+</body>
+
+</html>
